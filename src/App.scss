@@ -1,0 +1,43 @@
+.App {
+  background-color: #30475e;
+  height: 100vh;
+
+  .title {
+    margin: 0 0;
+    padding: 2%;
+    text-align: center;
+    color: #c1a57b;
+  }
+
+  .container {
+    display: flex;
+
+    .each {
+      width: 45%;
+      height: 650px;
+      text-align: center;
+      margin: auto;
+      border: solid #222831 5px;
+      background-color: #ececec;
+    }
+  }
+
+  .todo {
+    display: flex;
+    flex-flow: row wrap;
+
+    .todoList {
+      margin: auto;
+      width: 45%;
+      height: 450px;
+      border: solid red 1px;
+    }
+
+    .todoInputs {
+      width: 75%;
+      height: 100px;
+      margin: 2% auto;
+      border: solid red 1px;
+    }
+  }
+}
