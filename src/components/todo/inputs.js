@@ -1,31 +1,32 @@
 import React, { useState } from "react";
 import data from "../data";
 
-const TodoInputs = () => {
-  const [task, addTask] = useState({
-    newTask: "",
+const TodoInputs = ({ addTodo }) => {
+  const [value, setValue] = useState({
+    task: "",
     id: Date.now(),
     completed: false,
   });
 
-  const handleChanges = (e) => {
-    addTask({ newTask: e.target.value });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addTodo(value);
+    setValue({ task: "" });
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addTask({ ...addTask, newTask: "" });
-  };
+  console.log({ value });
   return (
-    <div className="todoInputs" onSubmit={handleSubmit}>
-      <input className="todoInsert" handleChanges={handleChanges} />
-      <button className="todoAdd" background="green">
+    <form className="todoInputs">
+      <input
+        className="todoInsert"
+        type="text"
+        value={value.task}
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <button className="todoAdd" onSubmit={handleSubmit}>
         Add
       </button>
-      <button className="todoRemove" background="red">
-        Remove
-      </button>
-    </div>
+      <button className="todoRemove">Remove</button>
+    </form>
   );
 };
 
