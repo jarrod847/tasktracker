@@ -3,13 +3,11 @@ import ActiveList from "./notdone";
 import CompletedList from "./completed";
 import TodoInputs from "./inputs";
 import { data } from "../data";
+import { useSelector } from "react-redux";
 
 const Todo = () => {
-  const [list, setlist] = useState(data);
-  const addTodo = (taskName) => {
-    const newTodos = { task: taskName, id: Date.now(), completed: false };
-    setlist(...list, newTodos);
-  };
+  const list = useSelector((state) => state.todos.todoList);
+  console.log(list);
 
   return (
     <div className="each">
@@ -17,7 +15,7 @@ const Todo = () => {
       <div className="todo">
         <ActiveList list={list} />
         <CompletedList />
-        <TodoInputs addTodo={addTodo} />
+        <TodoInputs />
       </div>
     </div>
   );
