@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.scss";
+import "./scss/App.scss";
 import Tracker from "./components/tracker/tracker";
 import Todo from "./components/todo/todo";
 

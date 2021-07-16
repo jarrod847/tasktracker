@@ -1,31 +1,37 @@
 import React, { useState } from "react";
 import data from "../data";
-
+import { useSelector, useDispatch } from "react-redux";
+import { add } from "../../Redux/slices/todoListSlice";
 const TodoInputs = () => {
-  const [task, addTask] = useState({
-    newTask: "",
-    id: Date.now(),
+  const dispatch = useDispatch();
+  const [value, setValue] = useState({
+    task: "",
+    id: Date(),
     completed: false,
   });
 
-  const handleChanges = (e) => {
-    addTask({ newTask: e.target.value });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(add(value));
+    setValue({ task: "", id: Date.now(), completed: false });
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addTask({ ...addTask, newTask: "" });
-  };
+  console.log(value);
   return (
-    <div className="todoInputs" onSubmit={handleSubmit}>
-      <input className="todoInsert" handleChanges={handleChanges} />
-      <button className="todoAdd" background="green">
+    <form className="todoInputs">
+      <input
+        name="task"
+        className="todoInsert"
+        type="text"
+        value={value.task}
+        onChange={(e) =>
+          setValue({ ...value, [e.target.name]: e.target.value })
+        }
+      />
+      <button className="todoAdd" onClick={handleSubmit}>
         Add
       </button>
-      <button className="todoRemove" background="red">
-        Remove
-      </button>
-    </div>
+      <button className="todoRemove">Remove</button>
+    </form>
   );
 };
 
