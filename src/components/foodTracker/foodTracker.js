@@ -9,6 +9,7 @@ const FoodTracker = () => {
       <div className="todo">
         <FoodList />
         <ConsumedList />
+        <button className="foodAdd">Add</button>
       </div>
     </div>
   );
