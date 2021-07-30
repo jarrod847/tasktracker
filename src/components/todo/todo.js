@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 
 const Todo = () => {
   const list = useSelector((state) => state.todos.todoList);
-  console.log(list);
 
   return (
     <div className="each">

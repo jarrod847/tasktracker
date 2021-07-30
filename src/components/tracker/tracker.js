@@ -1,7 +1,7 @@
 import React from "react";
 import FoodList from "./foodList";
 
-const Tracker = () => {
+const FoodTracker = () => {
   return (
     <div className="each">
       <h2>Food Tracker</h2>
@@ -12,4 +12,4 @@ const Tracker = () => {
   );
 };
 
-export default Tracker;
+export default FoodTracker;
