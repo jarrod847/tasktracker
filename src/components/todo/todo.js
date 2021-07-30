@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ActiveList from "./notdone";
+import ActiveList from "./activeList";
 import CompletedList from "./completed";
 import TodoInputs from "./inputs";
 import { data } from "../data";

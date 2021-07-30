@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/App.scss";
-import Tracker from "./components/tracker/tracker";
+import FoodTracker from "./components/foodTracker/foodTracker";
 import Todo from "./components/todo/todo";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <h1 className="title">Personal Tracker</h1>
       <div className="container">
         <Todo />
-        <Tracker />
+        <FoodTracker />
       </div>
     </div>
   );
