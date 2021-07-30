@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-const addFood = () => {
+const AddFood = () => {
+  const [food, setFood] = useState({
+    name: "",
+    protein: "",
+    Carbs: "",
+    Trans_Fat: "",
+    Sugar: "",
+    Calories: "",
+    Sodium: "",
+  });
   return (
     <div>
       <div>
@@ -52,3 +61,5 @@ const addFood = () => {
     </div>
   );
 };
+
+export default AddFood;
