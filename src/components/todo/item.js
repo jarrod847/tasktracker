@@ -1,11 +1,11 @@
 import React from "react";
 
 const Items = ({ list }) => {
-  const todoDate = list.id.split(" ");
-  console.log(todoDate);
+  const todoDate = list.created_at.split(" ");
+
   return (
     <div className="todo">
-      <p>{list.task}</p>
+      <p>{list.name}</p>
       <p>
         {todoDate[1]} &nbsp;
         {todoDate[2]} &nbsp;
